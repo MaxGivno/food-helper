@@ -56,7 +56,7 @@ function Recipe() {
           <h1>{recipe.name}</h1>
           <p className="title-desc">{recipe.description}</p>
           <div className="icons">
-            <StarRating rating={Math.random() * (5 - 2) + 2} />
+            <StarRating rating={(Math.random() * (5 - 2) + 2).toFixed(1)} />
             <Tags tags={recipe.tag} />
           </div>
         </div>

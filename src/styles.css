@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Damion&display=swap");
 
 :root {
   --divider-color: rgba(0, 0, 0, 0.1);
@@ -76,8 +77,12 @@ header {
 }
 
 .logo {
-  font-family: "Krona One", sans-serif;
+  /* font-family: "Krona One", sans-serif; */
+  font-family: "Damion", cursive;
+  font-size: 2.5rem;
+  margin: 0;
   color: var(--brown);
+  transform: rotate(-7deg);
 }
 
 .menu {
@@ -145,6 +150,32 @@ header {
   color: rgb(105, 105, 105);
 }
 
+.hero {
+  position: relative;
+  background: gray;
+  width: 100vw;
+  height: 600px;
+  margin-bottom: 25px;
+  margin-left: -100px;
+}
+
+.hero .border-top {
+  position: absolute;
+  width: 100%;
+  height: 13px;
+  background-image: url("/public/images/tile-top.svg");
+  background-color: var(--med-beige);
+}
+
+.hero .border-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 13px;
+  background-image: url("../public/img/border2.svg");
+  background-color: var(--med-beige);
+}
+
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(252px, 100%), 1fr));
@@ -167,6 +198,7 @@ header {
 }
 
 .img-container {
+  background: var(--dark-beige);
   position: relative;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
@@ -235,6 +267,10 @@ header {
   height: 300px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
+}
+
+.title-info h1 {
+  font-size: 2rem;
 }
 
 .recipe-body {
@@ -347,6 +383,10 @@ h3.recipe-element-title {
     text-align: center;
     width: 100vw;
     margin: 0;
+  }
+
+  .hero {
+    margin-left: 0;
   }
 
   .cards-container {
