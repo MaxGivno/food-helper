@@ -24,7 +24,7 @@ function ItemCard({ recipe }) {
         </div>
       </Link>
       <div className="icons">
-        <StarRating rating={Math.random() * (5 - 2) + 2} />
+        <StarRating rating={(Math.random() * (5 - 2) + 2).toFixed(1)} />
         <Tags tags={recipe.tag} />
       </div>
     </div>

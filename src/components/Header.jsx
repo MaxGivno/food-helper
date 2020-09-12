@@ -36,7 +36,7 @@ function Header() {
 
   return (
     <header>
-      <h2 className="logo">cooking</h2>
+      <h2 className="logo">Cooking</h2>
       <ul className="menu">
         <li>
           <Link to="/">
