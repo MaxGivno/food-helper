@@ -3,14 +3,18 @@ import { useParams } from "react-router-dom";
 
 // import StarRating from "../components/StarRating";
 import IngredientsList from "../components/IngredientsList";
+import Directions from "../components/Directions";
 
 function Recipe({ meals }) {
+  // Get recipe id from link
   const { recipeId } = useParams();
 
+  // Find the recipe by id
   const recipe = Object.values(meals)
     .flat()
     .find((recipe) => recipe.idMeal === recipeId);
 
+  // Parse ingredients from recipe
   const ingredients = () => {
     let arr = Object.entries(recipe);
     let ingNames = arr.filter((item) => item[0].startsWith("strIngre"));
@@ -28,17 +32,16 @@ function Recipe({ meals }) {
     return list;
   };
 
-  const regex = /(?:\r\n)+/g;
-  let paragraphs = recipe.strInstructions.split(regex);
-  // console.log(paragraphs);
-  paragraphs = paragraphs.map((text, i) => (
-    <li key={i}>
-      <p>{text}</p>
-    </li>
-  ));
-
-  // const steps = <p>{recipe.strInstructions}</p>;
-  const steps = paragraphs;
+  // Parse directions from recipe
+  const steps = () => {
+    const regex = /(?:\r\n)+/g;
+    let paragraphs = recipe.strInstructions.split(regex);
+    return paragraphs.map((text, i) => (
+      <li key={i}>
+        <p>{text}</p>
+      </li>
+    ));
+  };
 
   return (
     <div className="recipe">
@@ -55,13 +58,8 @@ function Recipe({ meals }) {
       <hr />
       <div className="recipe-body">
         <div className="main">
-          <section className="ingredients">
-            <IngredientsList ingList={ingredients()} />
-          </section>
-          <section className="steps">
-            <h3 className="recipe-element-title">Directions:</h3>
-            <ol className="steps-list">{steps}</ol>
-          </section>
+          <IngredientsList ingList={ingredients()} />
+          <Directions steps={steps()} />
         </div>
       </div>
     </div>

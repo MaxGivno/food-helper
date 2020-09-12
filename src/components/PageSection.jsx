@@ -4,9 +4,9 @@ import Card from "./Card";
 
 function PageSection({ meals, title }) {
   const firstFive = meals.slice(0, 5);
-  const cards = firstFive.map((item, i) => (
-    <Link key={i} to={`/recipe/${item.idMeal}`}>
-      <Card meal={item} />
+  const cards = firstFive.map((meal, i) => (
+    <Link key={i} to={`/recipe/${meal.idMeal}`}>
+      <Card meal={meal} />
     </Link>
   ));
 
