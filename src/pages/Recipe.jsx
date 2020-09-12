@@ -28,7 +28,17 @@ function Recipe({ meals }) {
     return list;
   };
 
-  const steps = <p>{recipe.strInstructions}</p>;
+  const regex = /(?:\r\n)+/g;
+  let paragraphs = recipe.strInstructions.split(regex);
+  // console.log(paragraphs);
+  paragraphs = paragraphs.map((text, i) => (
+    <li key={i}>
+      <p>{text}</p>
+    </li>
+  ));
+
+  // const steps = <p>{recipe.strInstructions}</p>;
+  const steps = paragraphs;
 
   return (
     <div className="recipe">

@@ -19,6 +19,13 @@
 
   --gradient1: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
   --transition-duration: 0.15s;
+  --site-width: 80vw;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -65,7 +72,11 @@ hr {
 .App {
   font-family: "Noto Serif", sans-serif;
   text-align: center;
-  width: 87vw;
+  width: 100vw;
+}
+
+.container {
+  width: var(--site-width);
   margin: 0 auto;
 }
 
@@ -76,13 +87,33 @@ header {
   padding: 0 15px;
 }
 
+footer {
+  background-color: var(--turquoise);
+  color: white;
+  margin-top: 25px;
+  padding: 0 15px;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .social i {
+  font-size: 1.4rem;
+  margin-left: 16px;
+}
+
 .logo {
   /* font-family: "Krona One", sans-serif; */
+  position: relative;
   font-family: "Damion", cursive;
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin: 0;
   color: var(--brown);
   transform: rotate(-7deg);
+  margin-bottom: 10px;
 }
 
 .menu {
@@ -90,7 +121,7 @@ header {
   display: flex;
   list-style: none;
   padding-right: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding-inline-start: 0;
 }
 
@@ -98,10 +129,15 @@ header {
   margin-left: 1.2rem;
 }
 
+.menu a.active {
+  border-bottom: 2px solid var(--brown);
+}
+
 .menu-btn {
   border: none;
   background-color: transparent;
   color: inherit;
+  font-family: inherit;
   font-size: inherit;
   cursor: pointer;
   padding: 0;
@@ -154,26 +190,31 @@ header {
   position: relative;
   background: gray;
   width: 100vw;
-  height: 600px;
+  height: 40vh;
   margin-bottom: 25px;
-  margin-left: -100px;
+  /* background-image: url("https://images.unsplash.com/photo-1591189863430-ab87e120f312?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"); */
+  /* background-image: url("https://images.unsplash.com/photo-1452251889946-8ff5ea7b27ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1440&q=80"); */
+  /* background-image: url("https://images.unsplash.com/photo-1563897539633-7374c276c212?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1440&q=80"); */
+  background-image: url("https://images.unsplash.com/photo-1545216560-68430ad77342?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1440&q=80");
+  background-size: cover;
+  background-position: center;
 }
 
 .hero .border-top {
   position: absolute;
   width: 100%;
-  height: 13px;
-  background-image: url("/public/images/tile-top.svg");
-  background-color: var(--med-beige);
+  height: 6px;
+  background-image: url("images/border1.png");
+  /* background-color: var(--med-beige); */
 }
 
 .hero .border-bottom {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 13px;
-  background-image: url("../public/img/border2.svg");
-  background-color: var(--med-beige);
+  height: 6px;
+  background-image: url("images/border2.png");
+  /* background-color: var(--med-beige); */
 }
 
 .cards-container {
@@ -241,7 +282,7 @@ header {
   display: flex;
 }
 
-.right .tag {
+.tag {
   font-family: Poppins;
   font-size: 0.7rem;
   color: white;
@@ -338,6 +379,10 @@ h3.recipe-element-title {
   line-height: 1;
 }
 
+.steps-list p {
+  white-space: pre-wrap;
+}
+
 .notes {
   background-color: #fdfad3;
   text-align: left;
@@ -366,6 +411,55 @@ h3.recipe-element-title {
   border-radius: 0 0 10px 10px;
   color: var(--brown);
   padding: 1px 25px;
+  border-top: 4px solid rgb(236, 212, 212);
+}
+
+.section-container {
+  width: 100%;
+  background-color: var(--med-beige);
+  margin-bottom: 25px;
+}
+
+.section {
+  width: var(--site-width);
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.section-header {
+  display: flex;
+  direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.section-card .img-container {
+  position: relative;
+  border-radius: 0;
+  display: block;
+}
+
+.section-card h3 {
+  font-size: 14px;
+}
+
+.thumb {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.section .cards-container {
+  grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 1fr));
+  grid-gap: 30px;
 }
 
 @media screen and (max-width: 600px) {
@@ -382,6 +476,11 @@ h3.recipe-element-title {
     font-family: "Noto Serif", sans-serif;
     text-align: center;
     width: 100vw;
+    margin: 0;
+  }
+
+  .container {
+    width: 100%;
     margin: 0;
   }
 
@@ -473,5 +572,17 @@ h3.recipe-element-title {
 
   .steps {
     margin-inline-start: 0;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero .border-top {
+    background-image: url("images/border1@2x.png");
+    background-size: 28px 6px;
+  }
+
+  .hero .border-bottom {
+    background-image: url("images/border2@2x.png");
+    background-size: 28px 6px;
   }
 }
