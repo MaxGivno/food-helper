@@ -36,7 +36,7 @@ function Recipe({ meals }) {
   const steps = () => {
     const regex = /(?:\r\n)+/g;
     let paragraphs = recipe.strInstructions.split(regex);
-    paragraphs = paragraphs.filter((str) => !str.match(/^\d/));
+    paragraphs = paragraphs.filter((str) => !str.match(/^\d+\.\s/));
     return paragraphs.map((text, i) => (
       <li key={i}>
         <p>{text}</p>
