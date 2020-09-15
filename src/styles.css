@@ -504,13 +504,13 @@ h3.recipe-element-title {
     flex-direction: column;
     justify-content: space-between;
   }
-
+  /* 
   .icons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  }
+  } */
 
   .recipe {
     /* background-color: white; */
