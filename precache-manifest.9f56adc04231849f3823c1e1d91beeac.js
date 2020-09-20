@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c76f924e04fed0593c1517272396a997",
+    "revision": "ad483a54d64016ff46c3e838dbbb12dd",
     "url": "/food-helper/index.html"
   },
   {
-    "revision": "334b3babf30bc27af720",
-    "url": "/food-helper/static/css/main.1aec4f09.chunk.css"
+    "revision": "ccefca8ae1f6a491333b",
+    "url": "/food-helper/static/css/main.a6c4780a.chunk.css"
   },
   {
     "revision": "9595a0b7ef49e3abd888",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/food-helper/static/js/2.20a1ad5c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "334b3babf30bc27af720",
+    "revision": "ccefca8ae1f6a491333b",
     "url": "/food-helper/static/js/main.5a4e9717.chunk.js"
   },
   {

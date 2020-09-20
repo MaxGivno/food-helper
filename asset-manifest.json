@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/food-helper/static/css/main.1aec4f09.chunk.css",
+    "main.css": "/food-helper/static/css/main.a6c4780a.chunk.css",
     "main.js": "/food-helper/static/js/main.5a4e9717.chunk.js",
     "main.js.map": "/food-helper/static/js/main.5a4e9717.chunk.js.map",
     "runtime-main.js": "/food-helper/static/js/runtime-main.b630c417.js",
@@ -8,15 +8,15 @@
     "static/js/2.20a1ad5c.chunk.js": "/food-helper/static/js/2.20a1ad5c.chunk.js",
     "static/js/2.20a1ad5c.chunk.js.map": "/food-helper/static/js/2.20a1ad5c.chunk.js.map",
     "index.html": "/food-helper/index.html",
-    "precache-manifest.14bb9001f09e7b531e19eaeaa7be9278.js": "/food-helper/precache-manifest.14bb9001f09e7b531e19eaeaa7be9278.js",
+    "precache-manifest.9f56adc04231849f3823c1e1d91beeac.js": "/food-helper/precache-manifest.9f56adc04231849f3823c1e1d91beeac.js",
     "service-worker.js": "/food-helper/service-worker.js",
-    "static/css/main.1aec4f09.chunk.css.map": "/food-helper/static/css/main.1aec4f09.chunk.css.map",
+    "static/css/main.a6c4780a.chunk.css.map": "/food-helper/static/css/main.a6c4780a.chunk.css.map",
     "static/js/2.20a1ad5c.chunk.js.LICENSE.txt": "/food-helper/static/js/2.20a1ad5c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b630c417.js",
     "static/js/2.20a1ad5c.chunk.js",
-    "static/css/main.1aec4f09.chunk.css",
+    "static/css/main.a6c4780a.chunk.css",
     "static/js/main.5a4e9717.chunk.js"
   ]
 }
