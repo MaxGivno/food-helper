@@ -1,5 +1,5 @@
 {
-  "name": "react",
+  "name": "food-helper",
   "version": "1.0.0",
   "description": "React example starter project",
   "keywords": [
@@ -30,5 +30,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "guppy": {
+    "id": "d0bd9240-f986-11ea-8eda-eb7b80d63e99",
+    "name": "food-helper",
+    "type": "create-react-app",
+    "color": "#FF6D00",
+    "icon": "./static/media/icon_gradient4.c5cddacd.png",
+    "createdAt": 1600416801125
+  }
 }
