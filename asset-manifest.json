@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/food-helper/static/css/main.1aec4f09.chunk.css",
+    "main.js": "/food-helper/static/js/main.395489fa.chunk.js",
+    "main.js.map": "/food-helper/static/js/main.395489fa.chunk.js.map",
+    "runtime-main.js": "/food-helper/static/js/runtime-main.b630c417.js",
+    "runtime-main.js.map": "/food-helper/static/js/runtime-main.b630c417.js.map",
+    "static/js/2.20a1ad5c.chunk.js": "/food-helper/static/js/2.20a1ad5c.chunk.js",
+    "static/js/2.20a1ad5c.chunk.js.map": "/food-helper/static/js/2.20a1ad5c.chunk.js.map",
+    "index.html": "/food-helper/index.html",
+    "precache-manifest.45fcb60a6b6fe07ec4e10072c4189905.js": "/food-helper/precache-manifest.45fcb60a6b6fe07ec4e10072c4189905.js",
+    "service-worker.js": "/food-helper/service-worker.js",
+    "static/css/main.1aec4f09.chunk.css.map": "/food-helper/static/css/main.1aec4f09.chunk.css.map",
+    "static/js/2.20a1ad5c.chunk.js.LICENSE.txt": "/food-helper/static/js/2.20a1ad5c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b630c417.js",
+    "static/js/2.20a1ad5c.chunk.js",
+    "static/css/main.1aec4f09.chunk.css",
+    "static/js/main.395489fa.chunk.js"
+  ]
+}
