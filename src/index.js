@@ -8,7 +8,7 @@ import App from "./App";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <ScrollToTop />
     <React.StrictMode>
       <AppContextProvider>
