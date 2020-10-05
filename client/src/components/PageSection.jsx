@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import Card from "./Card";
 
 function PageSection({ meals, title }) {
-  const firstFive = meals.slice(0, 5);
+  const firstFive = meals.length > 5 ? meals.slice(0, 5) : meals;
   const cards = firstFive.map((meal, i) => (
-    <Link key={i} to={`/recipe/${meal.idMeal}`}>
+    <Link key={i} to={`/recipe/${meal._id}`}>
       <Card meal={meal} />
     </Link>
   ));

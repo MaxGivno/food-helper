@@ -4,7 +4,7 @@ import axios from "axios";
 function useTheMealDB() {
   const axiosWithBaseUrl = axios.create({
     baseURL: "https://www.themealdb.com/api/json/v2/9973533/",
-    responseType: "json"
+    responseType: "json",
   });
   const [recentMeals, setRecentMeals] = useState([]);
   const [randomMeals, setRandomMeals] = useState([]);
@@ -26,6 +26,8 @@ function useTheMealDB() {
   useEffect(() => {
     recentMeals && loadLatest();
     randomMeals && loadRandom();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { recentMeals, randomMeals };

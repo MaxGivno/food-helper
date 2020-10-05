@@ -5,9 +5,9 @@ function Card({ meal }) {
   return (
     <div className="section-card">
       <div className="img-container">
-        <img className="thumb" src={meal.strMealThumb} alt="" />
+        <img className="thumb" src={meal.imageUrl} alt="" />
       </div>
-      <h3>{meal.strMeal}</h3>
+      <h3>{meal.name}</h3>
     </div>
   );
 }
