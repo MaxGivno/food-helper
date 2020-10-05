@@ -1,46 +1,26 @@
 {
-  "homepage": "https://maxgivno.github.io/food-helper",
   "name": "food-helper",
   "version": "1.0.0",
-  "description": "Simple recipes finding site with TheMealDB",
-  "keywords": [
-    "react",
-    "starter"
-  ],
-  "main": "src/index.js",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxGivno/food-helper.git"
+  },
+  "author": "Max Ryazanov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxGivno/food-helper/issues"
+  },
+  "homepage": "https://github.com/MaxGivno/food-helper#readme",
   "dependencies": {
-    "antd": "4.6.3",
-    "axios": "0.20.0",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
-    "react-router": "5.2.0",
-    "react-router-dom": "5.2.0",
-    "react-scripts": "^3.4.3"
+    "concurrently": "^5.3.0",
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0",
-    "typescript": "3.8.3"
-  },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "guppy": {
-    "id": "d0bd9240-f986-11ea-8eda-eb7b80d63e99",
-    "name": "food-helper",
-    "type": "create-react-app",
-    "color": "#FF6D00",
-    "icon": "./static/media/icon_gradient4.c5cddacd.png",
-    "createdAt": 1600416801125
+    "nodemon": "^2.0.4"
   }
 }
