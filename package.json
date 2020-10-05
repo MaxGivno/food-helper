@@ -2,7 +2,7 @@
   "homepage": "https://maxgivno.github.io/food-helper",
   "name": "food-helper",
   "version": "1.0.0",
-  "description": "React example starter project",
+  "description": "Simple recipes finding site with TheMealDB",
   "keywords": [
     "react",
     "starter"
