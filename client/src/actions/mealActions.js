@@ -20,7 +20,7 @@ export const getMealById = id => dispatch => {
         .then(res =>
             dispatch({
                 type: GET_MEAL_BY_ID,
-                payload: res.data
+                payload: id
             })
         )
 }

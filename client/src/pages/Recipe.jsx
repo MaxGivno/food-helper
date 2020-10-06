@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+
+import { connect } from "react-redux";
+import { getMealById } from "../actions/mealActions";
+import PropTypes from "prop-types";
 
 // import StarRating from "../components/StarRating";
 import IngredientsList from "../components/IngredientsList";
@@ -9,8 +13,16 @@ const Recipe = (props) => {
   // Get recipe id from link
   const { recipeId } = useParams();
 
+  const { getMealById, meal } = props;
+
+  useEffect(() => {
+    getMealById(recipeId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [recipeId]);
+
   // Find the recipe by id
-  const recipe = props.meals.filter((meal) => meal._id === recipeId)[0];
+  // const recipe = props.meals.filter((meal) => meal._id === recipeId)[0];
+  const recipe = meal.meals[0];
 
   // Get ingredients
   const ingredients = recipe.ingredients.map((item, i) => (
@@ -70,4 +82,13 @@ const Recipe = (props) => {
   );
 };
 
-export default Recipe;
+Recipe.propTypes = {
+  getMealById: PropTypes.func.isRequired,
+  meal: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  meal: state.meal,
+});
+
+export default connect(mapStateToProps, { getMealById })(Recipe);
