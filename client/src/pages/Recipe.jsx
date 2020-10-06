@@ -24,41 +24,6 @@ const Recipe = (props) => {
   // const recipe = props.meals.filter((meal) => meal._id === recipeId)[0];
   const recipe = meal.meals[0];
 
-  // Get ingredients
-  const ingredients = recipe.ingredients.map((item, i) => (
-    <p
-      key={i}
-      className="ingredient"
-      style={{
-        textAlign: "center",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <img
-        src={`https://www.themealdb.com/images/ingredients/${item.ingredient}-Small.png`}
-        style={{ height: "100px", width: "100px", objectFit: "scale-down" }}
-        alt={item.ingredient}
-      />
-      <span
-        style={{ marginTop: "0rem" }}
-      >{`${item.measure} ${item.ingredient}`}</span>
-    </p>
-  ));
-
-  // Parse directions from recipe
-  const steps = () => {
-    const regex = /(?:\r\n)+/g;
-    let paragraphs = recipe.instructions.split(regex);
-    paragraphs = paragraphs.filter((str) => !str.match(/^\d+\.\s/));
-    return paragraphs.map((text, i) => (
-      <li key={i}>
-        <p>{text}</p>
-      </li>
-    ));
-  };
-
   return (
     <div className="recipe">
       <section className="title">
@@ -73,9 +38,23 @@ const Recipe = (props) => {
       </section>
       <hr />
       <div className="recipe-body">
+        <iframe
+          title={recipe.name}
+          className="yt-container"
+          width="560"
+          height="315"
+          src={`https://www.youtube.com/embed/${recipe.youtubeUrl.replace(
+            "https://www.youtube.com/watch?v=",
+            ""
+          )}`}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+
         <div className="main">
-          <IngredientsList ingList={ingredients} />
-          <Directions steps={steps()} />
+          <IngredientsList ingredients={recipe.ingredients} />
+          <Directions instructions={recipe.instructions} />
         </div>
       </div>
     </div>

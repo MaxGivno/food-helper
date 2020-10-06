@@ -462,6 +462,11 @@ h3.recipe-element-title {
   grid-gap: 30px;
 }
 
+.yt-container {
+  /* width: 100%; */
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 600px) {
   body {
     margin: 0;

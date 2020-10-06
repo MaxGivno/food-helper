@@ -16,7 +16,7 @@ export default function (state = initialState, action) {
         case GET_MEAL_BY_ID:
             return {
                 ...state,
-                meals: state.meals.filter(meal => meal._id === action.payload),
+                meals: [action.payload],
                 loading: false
             }
         case ADD_MEAL:
