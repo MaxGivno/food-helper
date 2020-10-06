@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { connect } from "react-redux";
-import { getMeals } from "../actions/mealActions";
-import PropTypes from "prop-types";
 
 // import StarRating from "../components/StarRating";
 import IngredientsList from "../components/IngredientsList";
@@ -12,34 +9,10 @@ const Recipe = (props) => {
   // Get recipe id from link
   const { recipeId } = useParams();
 
-  useEffect(() => {
-    props.getMeals();
-  }, []);
-
-  const { meals } = props.meal;
-
   // Find the recipe by id
-  const recipe = Object.values(meals)
-    .flat()
-    .find((recipe) => recipe._id === recipeId);
+  const recipe = props.meals.filter((meal) => meal._id === recipeId)[0];
 
-  // Parse ingredients from recipe
-  // const ingredients = () => {
-  //   let arr = Object.entries(recipe);
-  //   let ingNames = arr.filter((item) => item[0].startsWith("strIngre"));
-  //   let ingMeasures = arr.filter((item) => item[0].startsWith("strMeasur"));
-  //   let list = [];
-  //   for (let i = 0; i < ingNames.length; i++) {
-  //     if (ingNames[i][1]) {
-  //       list.push(
-  //         <p key={i} className="ingredient">
-  //           {ingMeasures[i][1] + " " + ingNames[i][1]}
-  //         </p>
-  //       );
-  //     }
-  //   }
-  //   return list;
-  // };
+  // Get ingredients
   const ingredients = recipe.ingredients.map((item, i) => (
     <p key={i} className="ingredient">
       {`${item.measure} ${item.ingredient}`}
@@ -81,13 +54,4 @@ const Recipe = (props) => {
   );
 };
 
-Recipe.propTypes = {
-  getMeals: PropTypes.func.isRequired,
-  meal: PropTypes.object.isRequired,
-};
-
-const mapStateToProps = (state) => ({
-  meal: state.meal,
-});
-
-export default connect(mapStateToProps, { getMeals })(Recipe);
+export default Recipe;
