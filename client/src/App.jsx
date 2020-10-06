@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 import "./styles.css";
 
 import Header from "./components/Header";
@@ -15,9 +15,11 @@ import PropTypes from "prop-types";
 const App = (props) => {
   // const { recentMeals, randomMeals } = useTheMealDB();
 
+  const { getMeals } = props;
+
   useEffect(() => {
-    props.getMeals();
-  }, []);
+    getMeals();
+  }, [getMeals]);
 
   return (
     <div className="App">
@@ -45,4 +47,4 @@ const mapStateToProps = (state) => ({
   meal: state.meal,
 });
 
-export default connect(mapStateToProps, { getMeals })(App);
+export default withRouter(connect(mapStateToProps, { getMeals })(App));

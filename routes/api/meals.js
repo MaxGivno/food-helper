@@ -4,17 +4,26 @@ const router = express.Router()
 // Item Model
 const Meal = require('../../models/Meal')
 
-// @route   GET api/items
-// @desc    Get All Items
+// @route   GET api/meals
+// @desc    Get All Meals
 // @access  Public
 router.get('/', (req, res) => {
     Meal.find()
-        .sort({ date: -1 })
+        .sort({ dateModified: -1 })
         .then(meals => res.json(meals))
 })
 
-// @route   POST api/items
-// @desc    Create An Item
+// @route   GET api/meals/:id
+// @desc    Get Meal with Id
+// @access  Public
+router.get('/:id', (req, res) => {
+    Meal.findById(req.params.id)
+        .then(meal => res.json(meal))
+        .catch(err => res.status(404).json({ msg: `Not found: ${err}` }))
+})
+
+// @route   POST api/meals
+// @desc    Create a Meal
 // @access  Public
 router.post('/', (req, res) => {
     const src = req.body
@@ -31,7 +40,7 @@ router.post('/', (req, res) => {
         area: src.strArea,
         instructions: src.strInstructions,
         imageUrl: src.strMealThumb,
-        tags: src.strTags.split(', '),
+        tags: src.strTags ? src.strTags.split(', ') : src.strTags,
         youtubeUrl: src.strYoutube,
         ingredients: ingredients,
         sourceUrl: src.strSource,
@@ -42,11 +51,11 @@ router.post('/', (req, res) => {
         .then(meal => res.json(meal))
 })
 
-// @route   DELETE api/items/:id
-// @desc    Delete An Item
+// @route   DELETE api/meals/:id
+// @desc    Delete a Meal
 // @access  Public
 router.delete('/:id', (req, res) => {
-    Meal.findById(req.params._id).then(
+    Meal.findById(req.params.id).then(
         meal => meal.remove().then(() => res.json({ success: true }))
     ).catch(err => res.status(404).json({ success: false }))
 })

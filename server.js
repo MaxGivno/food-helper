@@ -8,17 +8,6 @@ const meals = require('./routes/api/meals')
 
 const app = express();
 
-// Setting dummy data
-let latest;
-fs.readFile(path.join(__dirname, 'latest.json'), 'utf8', (err, data) => {
-    if (err) throw err;
-    latest = JSON.parse(data).meals;
-});
-
-app.get('/api/meals', (req, res) => {
-    res.json(latest);
-});
-
 // Bodyparser Middleware
 app.use(bodyParser.json())
 

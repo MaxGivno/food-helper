@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 
 // import StarRating from "../components/StarRating";
@@ -14,8 +14,24 @@ const Recipe = (props) => {
 
   // Get ingredients
   const ingredients = recipe.ingredients.map((item, i) => (
-    <p key={i} className="ingredient">
-      {`${item.measure} ${item.ingredient}`}
+    <p
+      key={i}
+      className="ingredient"
+      style={{
+        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <img
+        src={`https://www.themealdb.com/images/ingredients/${item.ingredient}-Small.png`}
+        style={{ height: "100px", width: "100px", objectFit: "scale-down" }}
+        alt={item.ingredient}
+      />
+      <span
+        style={{ marginTop: "0rem" }}
+      >{`${item.measure} ${item.ingredient}`}</span>
     </p>
   ));
 
