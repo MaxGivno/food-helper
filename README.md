@@ -1,2 +1,2 @@
 # food-helper
-Created with CodeSandbox
+Simple recipe viewer that uses [themealdb.com API](https://www.themealdb.com/api.php)
